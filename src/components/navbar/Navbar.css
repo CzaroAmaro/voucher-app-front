@@ -1,13 +1,51 @@
 .navbar {
     background-color: #105dc5;
-    padding: 15px;
+    padding: 12px;
     color: #e1e1e1;
     height: 100vh;
-    border-radius: 8px;
-    font-weight: bold;
+    width: 250px;
+    border-bottom-right-radius: 8px;
+    border-top-right-radius: 8px;
     box-sizing: border-box;
     overflow: hidden;
+    font-weight: 500;
+    transition: width 0.3s ease;
+    position: relative;
 }
+
+.navbar.collapsed {
+    width: 60px;
+}
+
+.navbar.collapsed h1,
+.navbar.collapsed .link-text,
+.navbar.collapsed .theme-text {
+    display: none;
+}
+
+.navbar.collapsed ul li {
+    width: auto;
+    text-align: center;
+}
+
+.navbar.collapsed ul li a {
+    padding: 4px 0;
+    justify-content: center;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #e1e1e1;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 1;
+}
+
+/* Reszta istniejących styli pozostaje bez zmian */
 .navbar {
     overflow-x: hidden;
     overflow-y: auto;
@@ -25,8 +63,8 @@
 }
 
 .navbar a {
-    display: block;
-    text-align: left;
+    display: flex;
+    align-items: center;
     padding: 4px;
     color: #e1e1e1;
     text-decoration: none;
@@ -34,24 +72,12 @@
 }
 
 .navbar a:hover {
-    color: #f0f0f0;
+    color: #050505;
 }
 
 .navbar a.active {
-    font-weight: bold;
     background-color: #06327a;
     border-radius: 8px;
-}
-
-.navbar a.active::before {
-    position: absolute;
-    top: -4px;
-    bottom: -4px;
-    left: -8px;
-    right: -8px;
-    background-color: #0b0b13;
-    border-radius: 4px;
-    z-index: -1;
 }
 
 .theme-switch input {
@@ -70,11 +96,12 @@
     cursor: pointer;
     top: 0;
     left: 0;
-    right: 0;
+    right: 5px;
     bottom: 0;
     background-color: var(--toggle-bg);
     transition: background-color 0.4s;
     border-radius: 34px;
+
 }
 
 .slider::before {
@@ -82,7 +109,7 @@
     content: "";
     height: 18px;
     width: 18px;
-    left: 3px;
+    left: 0;
     bottom: 3px;
     background-color: var(--toggle-fg);
     transition: transform 0.4s;
