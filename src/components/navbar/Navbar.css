@@ -14,7 +14,8 @@
 }
 
 .navbar.collapsed {
-    width: 60px;
+    width: 70px;
+    padding-top:34px;
 }
 
 .navbar.collapsed h1,
@@ -35,17 +36,20 @@
 
 .toggle-button {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 5px;
+    right: 22px;
     background: none;
     border: none;
     color: #e1e1e1;
     cursor: pointer;
     padding: 5px;
     z-index: 1;
+    transition: color 0.3s ease;
+}
+.toggle-button:hover {
+    color: #050505;
 }
 
-/* Reszta istniejących styli pozostaje bez zmian */
 .navbar {
     overflow-x: hidden;
     overflow-y: auto;
